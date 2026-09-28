@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Eco Togo Connect — Landing Page
+   Styles personnalisés (le reste de la mise en forme passe par Tailwind)
+   ========================================================================== */
+
+/* Défilement fluide vers les ancres */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1E2B24;
+  background: #FAFAF6;
+}
+
+/* Titres */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Taches de couleur floues décoratives */
+.leaf-blur {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* En-tête après défilement (classe ajoutée par script.js) */
+header.scrolled {
+  background: rgba(250, 250, 246, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(14, 59, 46, 0.08);
+}
+
+/* Ligne pointillée reliant les étapes */
+.step-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 27px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #DDE7DE 0 8px, transparent 8px 14px);
+  z-index: 0;
+}
+
+/* Ligne masquée sur mobile */
+@media (max-width: 768px) {
+  .step-line::before {
+    display: none;
+  }
+}
